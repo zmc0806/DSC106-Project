@@ -1,13 +1,18 @@
 <script>
-  let url_gdp = "https://zmc0806.github.io/project/gdp"; 
-  let url_gini = "https://zmc0806.github.io/project/gini"; 
-  let url_home = "https://zmc0806.github.io/project/home";
+import { goto, beforeNavigate } from '$app/navigation';
+import { base } from '$app/paths';
+
+async function navigateAndRefresh(url) {
+  await goto(url);
+  window.location.reload();
+}
+
 </script>
-<a href="{url_home}" target="_blank" rel="noopener noreferrer">HOME</a>
 
-<a href="{url_gdp}" target="_blank" rel="noopener noreferrer">GDP</a>
+<button on:click={() => navigateAndRefresh(`${base}/home`)}>HOME</button>
+<button on:click={() => navigateAndRefresh(`${base}/gdp`)}>GDP</button>
+<button on:click={() => navigateAndRefresh(`${base}/gini`)}>GINI</button>
 
-<a href="{url_gini}" target="_blank" rel="noopener noreferrer">GINI</a>
 
 <!DOCTYPE html>
 <html lang="en">
