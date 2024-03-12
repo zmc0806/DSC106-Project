@@ -11,7 +11,7 @@ async function navigateAndRefresh(url) {
 
 <button on:click={() => navigateAndRefresh(`${base}/home`)}>HOME</button>
 <button on:click={() => navigateAndRefresh(`${base}/gdp`)}>GDP</button>
-<button on:click={() => navigateAndRefresh(`${base}/gini`)}>GINI</button>
+<button on:click={() => goto(`${base}/gini`)}>GINI</button>
 
 
 <!DOCTYPE html>
